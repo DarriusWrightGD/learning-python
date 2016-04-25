@@ -10,7 +10,7 @@ from phonebook import Phonebook
 #     return Phonebook()
 
 @pytest.fixture
-def phonebook()
+def phonebook():
     return Phonebook()
 
 def test_lookup_entry_by_name(phonebook):
