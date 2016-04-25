@@ -37,8 +37,20 @@ Unit testing cannot grantee that the software is 100% free of errors. In additoi
     - Write little code
     - Refractor
 
+## Three kinds of assertions 
+- Check the return value or exception 
+- Check a state change (public api)
+- Check a method call (mock/spy)
 
-#Vocabulary
+## Monkeypatching 
+this is where you change a peice of code at runtime. this is how to test code without testability in mind. 
+
+##Vocabulary
+- Test Double - this is a stand in for an actual class and the class that is using the class doesn't know that it isn't using the right thing.
+    - Stub - test double that stands in for an object, same interface and no logic or advanced behavior
+    - Fake - like a stub, except it contains logic and functionality for the purposes of the test. Useful for files, databases, and webservers.
+    - Mock - likes stubs, returns hard coded values. The difference is that a mocks make assertions about an object, and can case the test to fail.
+    - Test Spy - A spy records calls and then you can find out what happened from the spy calleds that were made and with what parameters. Spys do not fail they just record the results.
 
 - TestCase - a test case is testing a specific portion of your system. The test case should be able to run independently of one another
  without any side effects. The name should be self explainitory. there are a few main parts to a test case
@@ -54,3 +66,9 @@ Unit testing cannot grantee that the software is 100% free of errors. In additoi
 - Test Suite - is a grouping of tests cases
 
 - Test Fixture think set up, test case, and tear down. The set up will run before the test case to set up any dependencies, then the test case will run, finally tear down will clean up dependcies if necessary.
+
+**Useful commands**
+- python -m pytest
+- python -m pytest -v
+- python -m pytest --doctest-modules
+- python -m pytest --doctest-modules -v
